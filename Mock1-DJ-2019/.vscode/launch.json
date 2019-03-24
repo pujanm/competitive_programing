@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - seriesAp",
+            "request": "launch",
+            "mainClass": "seriesAp"
+        }
+    ]
+}
