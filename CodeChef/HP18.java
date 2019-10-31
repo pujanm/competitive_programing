@@ -9,8 +9,8 @@ class HP18 {
     sc.nextLine();
     // System.out.println(t);
     for(int z = 0; z < t; z++) {
-      String ins = sc.nextLine();
-      String[] in = ins.split(" ");
+      String inps = sc.nextLine();
+      String[] in = inps.split(" ");
 
       int n = Integer.parseInt(in[0]);
       int a = Integer.parseInt(in[1]);
@@ -19,28 +19,30 @@ class HP18 {
       int bob = 0;
       int alice = 0;
       int intersection = 0;
-      ArrayList<Integer> arr = new ArrayList<>();
+      ArrayList<Integer> arrlist = new ArrayList<>();
       int inp;
 
       for(int i = 0; i < n; i++) {
         inp = sc.nextInt();
-        arr.add(inp);
+        arrlis.add(inp);
       }
 
-      for(int j = 0; j < arr.size(); j++) {
-        if(arr.get(j) % a == 0) {
+      for(int j = 0; j < arrlist.size(); j++) {
+        if(arrlist.get(j) % a == 0) {
           bob += 1;
         }
-        if(arr.get(j) % b == 0) {
+        if(arrlist.get(j) % b == 0) {
           alice += 1;
         }
-        if(arr.get(j) % a == 0 && arr.get(j) % b == 0) {
+        if(arrlist.get(j) % a == 0 && arrlist.get(j) % b == 0) {
           intersection += 1;
         }
       }
 
       alice = alice - intersection;
-      bob =  intersection > 0 ? bob - intersection + 1 : bob - intersection;
+      int a = bob - intersection + 1;
+      int b = bob - intersection;
+      bob =  intersection > 0 ? a : b;
 
       if(alice < bob) {
         System.out.println("BOB");
